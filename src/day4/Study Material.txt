@@ -1,0 +1,466 @@
+﻿Pract1
+// Car.java
+public class Car {
+    // Data members (variables)
+    String brand;
+    String model;
+    int year;
+    int speed;
+
+
+    // Constructor to initialize car details
+    Car(String brand, String model, int year) {
+        this.brand = brand;
+        this.model = model;
+        this.year = year;
+        this.speed = 0; // Initial speed is 0
+    }
+
+
+    // Member function to display car information
+    void displayInfo() {
+        System.out.println("Car Info:");
+        System.out.println("Brand: " + brand);
+        System.out.println("Model: " + model);
+        System.out.println("Year: " + year);
+        System.out.println("Current Speed: " + speed + " km/h");
+    }
+
+
+    // Member function to accelerate the car
+    void accelerate(int increaseBy) {
+        speed += increaseBy;
+        System.out.println("Car accelerated. New speed: " + speed + " km/h");
+    }
+
+
+    // Member function to apply brakes
+    void applyBrakes(int decreaseBy) {
+        speed -= decreaseBy;
+        if (speed < 0) {
+            speed = 0;
+        }
+        System.out.println("Brakes applied. New speed: " + speed + " km/h");
+    }
+
+
+    // Main method to run the program
+    public static void main(String[] args) {
+        // Creating an object of Car
+        Car myCar = new Car("Toyota", "Corolla", 2020);
+
+
+        // Using member functions
+        myCar.displayInfo();
+        myCar.accelerate(30);
+        myCar.applyBrakes(10);
+        myCar.displayInfo();
+    }
+}
+
+
+------------------------------------------------------------------------------------------------------------------------------------------Practical 2
+public class BankAccount {
+    // Data members
+    String accountHolder;
+    String accountNumber;
+    double balance;
+
+
+    // Default constructor
+    BankAccount() {
+        accountHolder = "Unknown";
+        accountNumber = "000000";
+        balance = 0.0;
+    }
+
+
+    // Parameterized constructor
+    BankAccount(String accHolder, String accNumber, double initBalance) {
+        accountHolder = accHolder;
+        accountNumber = accNumber;
+        balance = initBalance;
+    }
+
+
+    // Copy constructor
+    BankAccount(BankAccount other) {
+        this.accountHolder = other.accountHolder;
+        this.accountNumber = other.accountNumber;
+        this.balance = other.balance;
+    }
+
+
+    // Method to deposit money
+    void deposit(double amount) {
+        if (amount > 0) {
+            balance += amount;
+            System.out.println("₹" + amount + " deposited.");
+        } else {
+            System.out.println("Invalid deposit amount.");
+        }
+    }
+
+
+    // Method to withdraw money
+    void withdraw(double amount) {
+        if (amount > 0 && amount <= balance) {
+            balance -= amount;
+            System.out.println("₹" + amount + " withdrawn.");
+        } else {
+            System.out.println("Insufficient balance or invalid amount.");
+        }
+    }
+
+
+    // Method to check balance
+    void checkBalance() {
+        System.out.println("Current balance: ₹" + balance);
+    }
+
+
+    // Method to display account details
+    void displayInfo() {
+        System.out.println("Account Holder: " + accountHolder);
+        System.out.println("Account Number: " + accountNumber);
+        System.out.println("Balance: ₹" + balance);
+    }
+
+
+    // Main method to test the class
+    public static void main(String[] args) {
+        // Using parameterized constructor
+        BankAccount acc1 = new BankAccount("Chaitanya Awale", "123456789", 1000.0);
+        acc1.displayInfo();
+        acc1.deposit(500);
+        acc1.withdraw(200);
+        acc1.checkBalance();
+
+
+        System.out.println();
+
+
+        // Using default constructor
+        BankAccount acc2 = new BankAccount();
+        acc2.displayInfo();
+
+
+        System.out.println();
+
+
+        // Using copy constructor
+        BankAccount acc3 = new BankAccount(acc1);
+        System.out.println("Copy of first account:");
+        acc3.displayInfo();
+    }
+}
+------------------------------------------------------------------------------------------------------------------------------------------
+Practical 3
+public class ShapeArea {
+
+
+    // Area of a circle
+    double area(double radius) {
+        return Math.PI * radius * radius;
+    }
+
+
+    // Area of a square
+    double area(int side) {
+        return side * side;
+    }
+
+
+    // Area of a triangle
+    double area(double base, double height) {
+        return 0.5 * base * height;
+    }
+
+
+    public static void main(String[] args) {
+        ShapeArea sa = new ShapeArea();
+
+
+        System.out.println("Area of Circle (radius = 5): " + sa.area(5.0));
+        System.out.println("Area of Square (side = 4): " + sa.area(4));
+        System.out.println("Area of Triangle (base = 6, height = 3): " + sa.area(6.0, 3.0));
+    }
+}
+------------------------------------------------------------------------------------------------------------------------------------------Practical 4
+// Abstract class
+abstract class Marks {
+    // Abstract method to be implemented by subclasses
+    abstract double getPercentage();
+}
+
+
+// Class A for student with 3 subjects
+class A extends Marks {
+    int m1, m2, m3;
+
+
+    // Constructor
+    A(int m1, int m2, int m3) {
+        this.m1 = m1;
+        this.m2 = m2;
+        this.m3 = m3;
+    }
+
+
+    // Overriding getPercentage method
+    double getPercentage() {
+        int total = m1 + m2 + m3;
+        return (total / 300.0) * 100;
+    }
+}
+
+
+// Class B for student with 4 subjects
+class B extends Marks {
+    int m1, m2, m3, m4;
+
+
+    // Constructor
+    B(int m1, int m2, int m3, int m4) {
+        this.m1 = m1;
+        this.m2 = m2;
+        this.m3 = m3;
+        this.m4 = m4;
+    }
+
+
+    // Overriding getPercentage method
+    double getPercentage() {
+        int total = m1 + m2 + m3 + m4;
+        return (total / 400.0) * 100;
+    }
+}
+
+
+// Main class
+public class StudentPercentage {
+    public static void main(String[] args) {
+        A studentA = new A(85, 90, 80);       // Student A with 3 subjects
+        B studentB = new B(75, 88, 92, 81);   // Student B with 4 subjects
+
+
+        System.out.println("Percentage of Student A: " + studentA.getPercentage() + "%");
+        System.out.println("Percentage of Student B: " + studentB.getPercentage() + "%");
+    }
+}
+------------------------------------------------------------------------------------------------------------------------------------------
+Practical 5
+import java.util.*;
+
+
+public class StudentRecords {
+    public static void main(String[] args) {
+        // Step 1: Create and populate HashMap
+        HashMap<Integer, String> studentMap = new HashMap<>();
+        studentMap.put(101, "Alice");
+        studentMap.put(105, "Bob");
+        studentMap.put(102, "Charlie");
+        studentMap.put(104, "David");
+        studentMap.put(103, "Eve");
+
+
+        // Display the HashMap
+        System.out.println("HashMap (Roll No -> Name):");
+        for (Map.Entry<Integer, String> entry : studentMap.entrySet()) {
+            System.out.println(entry.getKey() + " -> " + entry.getValue());
+        }
+
+
+        // Step 2: Convert Name field to ArrayList
+        ArrayList<String> nameList = new ArrayList<>(studentMap.values());
+
+
+        // Step 3: Convert Roll No to TreeSet
+        TreeSet<Integer> rollSet = new TreeSet<>(studentMap.keySet());
+
+
+        // Display the ArrayList of names
+        System.out.println("\nArrayList of Names:");
+        for (String name : nameList) {
+            System.out.println(name);
+        }
+
+
+        // Display the TreeSet of roll numbers
+        System.out.println("\nTreeSet of Roll Numbers:");
+        for (int roll : rollSet) {
+            System.out.println(roll);
+        }
+    }
+}
+------------------------------------------------------------------------------------------------------------------------------------------
+Practical 6
+// Thread class to print even numbers
+class EvenThread extends Thread {
+    public void run() {
+        System.out.println("Even Numbers:");
+        for (int i = 1, count = 0; count < 10; i++) {
+            if (i % 2 == 0) {
+                System.out.println("Even: " + i);
+                count++;
+                try {
+                    Thread.sleep(100); // Add delay for better visibility
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+}
+
+
+// Thread class to print odd numbers
+class OddThread extends Thread {
+    public void run() {
+        System.out.println("Odd Numbers:");
+        for (int i = 1, count = 0; count < 10; i++) {
+            if (i % 2 != 0) {
+                System.out.println("Odd: " + i);
+                count++;
+                try {
+                    Thread.sleep(100); // Add delay for better visibility
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+}
+
+
+// Main class
+public class EvenOddThreads {
+    public static void main(String[] args) {
+        EvenThread even = new EvenThread();
+        OddThread odd = new OddThread();
+
+
+        // Start both threads
+        even.start();
+        odd.start();
+    }
+}
+------------------------------------------------------------------------------------------------------------------------------------------
+Practical 7
+import java.io.*;
+import java.util.*;
+
+
+public class SplitOddEven {
+    public static void main(String[] args) {
+        try {
+            // Reader for numbers.txt
+            File inputFile = new File("numbers.txt");
+            Scanner scanner = new Scanner(inputFile);
+
+
+            // Writers for odd.txt and even.txt
+            FileWriter oddWriter = new FileWriter("odd.txt");
+            FileWriter evenWriter = new FileWriter("even.txt");
+
+
+            // Read and process each number
+            while (scanner.hasNextInt()) {
+                int num = scanner.nextInt();
+
+
+                if (num % 2 == 0) {
+                    evenWriter.write(num + "\n");
+                } else {
+                    oddWriter.write(num + "\n");
+                }
+            }
+
+
+            // Close all resources
+            scanner.close();
+            oddWriter.close();
+            evenWriter.close();
+
+
+            System.out.println("Odd and Even numbers have been written to odd.txt and even.txt.");
+        } catch (IOException e) {
+            System.out.println("An error occurred: " + e.getMessage());
+        }
+    }
+}
+------------------------------------------------------------------------------------------------------------------------------------------Practical 8
+class Adder<T extends Number, U extends Number> {
+    T num1;
+    U num2;
+
+
+    Adder(T n1, U n2) {
+        num1 = n1;
+        num2 = n2;
+    }
+
+
+    void add() {
+        double sum = num1.doubleValue() + num2.doubleValue();
+        System.out.println("Sum: " + sum);
+    }
+}
+
+
+public class Main {
+    public static void main(String[] args) {
+        Adder<Integer, Double> a1 = new Adder<>(10, 20.5);
+        a1.add();
+
+
+        Adder<Float, Integer> a2 = new Adder<>(5.5f, 3);
+        a2.add();
+    }
+}
+------------------------------------------------------------------------------------------------------------------------------------------
+Practical 9
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+
+public class JDBCConnectionExample {
+    public static void main(String[] args) {
+        // Database details
+        String url = "jdbc:mysql://localhost:3306/testdb"; // Replace with your DB name
+        String user = "root";                              // Replace with your DB username
+        String password = "password";                      // Replace with your DB password
+
+
+        try {
+            // Load MySQL JDBC driver (optional in newer versions)
+            Class.forName("com.mysql.cj.jdbc.Driver");
+
+
+            // Establish connection
+            Connection conn = DriverManager.getConnection(url, user, password);
+            System.out.println("Connected to the database successfully!");
+
+
+            // Close connection
+            conn.close();
+        } catch (ClassNotFoundException e) {
+            System.out.println("JDBC Driver not found.");
+        } catch (SQLException e) {
+            System.out.println("Connection failed: " + e.getMessage());
+        }
+    }
+}
+ ----->
+in my Sql
+CREATE DATABASE testdb;
+
+
+USE testdb;
+
+
+CREATE TABLE student (
+    id INT PRIMARY KEY,
+    name VARCHAR(50)
+);
