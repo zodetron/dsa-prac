@@ -21,9 +21,18 @@ public class day8a {
 
 
 
-        List<String> words = new ArrayList<>(Arrays.asList("xy","xyz","zxy","yz"));
+        List<String> words123 = new ArrayList<>(Arrays.asList("xy","xyz","zxy","yz"));
 
+        Collections.sort(words123); // Sorts in ascending order
+        List<char[]> groupedChars = new ArrayList<>();
 
+//        for (String str : words123) {
+//            words123.add(str.toCharArray());  // Convert each string to char[]
+//        }
+
+//        Arrays.words=tocharArray();
+
+        System.out.println(words123);
 
 
 
