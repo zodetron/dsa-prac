@@ -1,6 +1,7 @@
 package day8;
 import java.util.*;
 
+//Sorting to find the kth freq element
 public class day8e {
         public int[] topKFrequent(int[] nums, int k) {
             Map<Integer, Integer> count = new HashMap<>();
