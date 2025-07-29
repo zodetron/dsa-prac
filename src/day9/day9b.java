@@ -6,17 +6,31 @@ import java.util.Arrays;
 
 
         public class day9b {
-            public String encode(List<String> strs) {
-                String enco= "";
-                for(String s:strs){
-                    enco+=s;
-                }
-                return enco;
-            }
 
-            public List<String> decode(String str) {
-                return new ArrayList<>();
-            }
+                public String encode(List<String> strs) {
+                    StringBuilder res = new StringBuilder();
+                    for (String s : strs) {
+                        res.append(s.length()).append('#').append(s);
+                    }
+                    return res.toString();
+                }
+
+                public List<String> decode(String str) {
+                    List<String> res = new ArrayList<>();
+                    int i = 0;
+                    while (i < str.length()) {
+                        int j = i;
+                        while (str.charAt(j) != '#') {
+                            j++;
+                        }
+                        int length = Integer.parseInt(str.substring(i, j));
+                        i = j + 1;
+                        j = i + length;
+                        res.add(str.substring(i, j));
+                        i = j;
+                    }
+                    return res;
+                }
 
             public static void main(String[] args) {
                 day9b sol= new day9b();
