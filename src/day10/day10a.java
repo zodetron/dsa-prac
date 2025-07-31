@@ -8,7 +8,7 @@ public class day10a {
             for (int row = 0; row < 9; row++) {
                 Set<Character> seen = new HashSet<>();
                 for (int i = 0; i < 9; i++) {
-                    if (board[row][i] == '.') continue;
+                    if (board[row][i] == '.') {continue;}
                     if (seen.contains(board[row][i])) return false;
                     seen.add(board[row][i]);
                 }
