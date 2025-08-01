@@ -1,5 +1,5 @@
 package day11;
-//Implementation of stack
+//Implementation of stack using linked list
 
 public class day11a {
     static class Node{
