@@ -29,7 +29,7 @@ public class day11e {
         s.push(2);
         s.push(3);
         s.push(4);
-
+        s.push(8);
         reverse(s);
 
         while (!s.isEmpty()) {
