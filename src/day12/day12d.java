@@ -28,6 +28,7 @@ public class day12d {
         public static void main(String[] args) {
             day12d sol = new day12d();
             int target = 12;
+            //this is by stack
             int[] position = {10, 8, 0, 5, 3};
             int[] speed = {2, 4, 1, 1, 3};
 
