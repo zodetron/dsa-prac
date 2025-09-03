@@ -1,5 +1,5 @@
 package day17;
-
+//LeetCode 27 – Remove Element
 public class day17b {
 
         public int removeElement(int[] nums, int val) {
