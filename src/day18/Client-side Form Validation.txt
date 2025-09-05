@@ -1,0 +1,17 @@
+﻿Registration Form
+Top of Form
+Name:
+
+
+Email:
+
+
+Password:
+
+
+Confirm Password:
+
+
+Register 
+Bottom of Form
+
