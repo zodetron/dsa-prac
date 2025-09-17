@@ -6,6 +6,7 @@ public class day18e {
         public static int lengthOfLongestSubstring(String s) {
             Map<Character, Integer> map = new HashMap<>();
             int left = 0, maxLen = 0;
+            int maxx=122;
 
             for (int right = 0; right < s.length(); right++) {
                 char c = s.charAt(right);
