@@ -28,7 +28,7 @@ public class day22a {
         }
 
         public static void main(String[] args) {
-            day9.day9a sol= new day9.day9a();
+            day22.day22b sol= new day22.day22b();
             List<String> myList = new ArrayList<>();
             List<String> strs = Arrays.asList("neet", "code", "love", "you");
 //        myList=sol.decode(strs);
