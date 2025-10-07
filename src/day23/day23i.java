@@ -39,7 +39,6 @@ public class day23i {
         List<String> decoded = sol.decode(encoded);
         System.out.println("Decoded: " + decoded);
 
-        //int m
     }
 }
 
