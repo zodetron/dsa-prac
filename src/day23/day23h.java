@@ -31,5 +31,7 @@ public class day23h {
 
         int[] nums = {100, 4, 200, 1, 3, 2};
         System.out.println("Longest consecutive sequence: " + sol.longestConsecutive(nums)); // Output: 4
+
+        //returns output in longest string.
     }
 }
