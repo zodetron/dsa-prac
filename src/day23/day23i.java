@@ -39,6 +39,8 @@ public class day23i {
         List<String> decoded = sol.decode(encoded);
         System.out.println("Decoded: " + decoded);
 
+
+        //INT M=10; LOOP THROUGH IT all for the answers;
     }
 }
 
