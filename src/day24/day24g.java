@@ -23,5 +23,8 @@ public class day24g {
         public static void main(String[] args) {
             int[] heights = {2, 1, 5, 6, 2, 3};
             System.out.println("Largest Rectangle Area: " + largestRectangleArea(heights));
+
+            //new logic
+            int m=10;
         }
 }
