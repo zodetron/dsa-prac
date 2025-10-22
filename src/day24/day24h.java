@@ -29,5 +29,7 @@ public class day24h {
         public static void main(String[] args) {
             int[] heights = {2, 1, 5, 6, 2, 3};
             System.out.println(largestRectangleArea(heights));  // Output: 10
+
+            //added new version of code same logic
         }
 }
