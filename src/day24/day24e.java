@@ -8,6 +8,19 @@ public class day24e {
             int[] res = new int[n];
             Deque<int[]> stack = new ArrayDeque<>();
 
+//            for (int i = 0; i < n; i++) {
+//                int t = temperatures[i];
+//
+//                // Pop until the current temperature is not greater
+//                while (!stack.isEmpty() && t > stack.peek()[0]) {
+//                    int[] pair = stack.pop();
+//                    res[pair[1]] = i - pair[1];
+//                }
+//
+//                stack.push(new int[]{t, i});
+//            }
+//
+//            return res;
             for (int i = 0; i < n; i++) {
                 int t = temperatures[i];
 
