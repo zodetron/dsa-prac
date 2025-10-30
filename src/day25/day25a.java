@@ -6,6 +6,7 @@ public class day25a {
         int a=10
         for(int i=1;i<10;i++){
             a=a+1;
+            a=b+1;
         }
     }
 }
