@@ -28,3 +28,4 @@ public class day25e {
             sc.close();
         }
 }
+//git push check -origin main
