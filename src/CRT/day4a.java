@@ -49,6 +49,11 @@ public class day4a {
         temp.next=newNode;
     }
 
+    void insertAt(int location, int data){
+
+
+    }
+
     public static void main(String[] args) {
         day4a list = new day4a();
 
@@ -61,6 +66,9 @@ public class day4a {
         list.display();
 
         list.insertNode(70);
+        list.display();
+
+        list.insertAt(3,130);
         list.display();
     }
 }
