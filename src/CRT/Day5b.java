@@ -8,8 +8,8 @@ public class Day5b {
             return;
         }
         int mid = si + (ei-si)/2;
-        divide(arr,si,mid)
-        divide(arr,mid+1, ei)
+//        divide(arr,si,mid);
+//        divide(arr,mid+1, ei)
     }
 
     public static void main(String[] args) {
