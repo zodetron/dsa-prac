@@ -17,7 +17,7 @@ public class Day2d {
 
     public static void main(String[] args) {
         Day2d solution = new Day2d();
-        char[] s = {'a', 'b'};
+        char[] s = {'h', 'e','l','l','l','l','o'};
         solution.reverseString(s);
         System.out.println(s);
     }
